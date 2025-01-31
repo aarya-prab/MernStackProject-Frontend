@@ -10,7 +10,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/api/products'); // Ensure this endpoint is correct
+        const response = await fetch('https://mern-backend-ljeh.onrender.com/api/products'); // Ensure this endpoint is correct
         const data = await response.json();
         if (data.success) {
           setProducts(data.products);
@@ -27,7 +27,7 @@ const HomePage = () => {
 
   const handleDelete = async (productId) => {
     try {
-      const response = await fetch(`/api/products/${productId}`, {
+      const response = await fetch(`https://mern-backend-ljeh.onrender.com/api/products/${productId}`, {
         method: 'DELETE',
       });
       const data = await response.json();
